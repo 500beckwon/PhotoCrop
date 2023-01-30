@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		681D0AA72987B43700E75FA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AA62987B43700E75FA5 /* AppDelegate.swift */; };
+		681D0AA92987B43700E75FA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AA82987B43700E75FA5 /* SceneDelegate.swift */; };
+		681D0AAE2987B43700E75FA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681D0AAC2987B43700E75FA5 /* Main.storyboard */; };
+		681D0AB02987B43800E75FA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681D0AAF2987B43800E75FA5 /* Assets.xcassets */; };
+		681D0AB32987B43800E75FA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681D0AB12987B43800E75FA5 /* LaunchScreen.storyboard */; };
+		681D0AC92987B47000E75FA5 /* CropImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AC82987B47000E75FA5 /* CropImageManager.swift */; };
+		681D0ACB2987B50700E75FA5 /* PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */; };
+		681D0ACD2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */; };
+		681D0ACF2987B59400E75FA5 /* PhotoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0ACE2987B59400E75FA5 /* PhotoListView.swift */; };
+		681D0AD12987B5AE00E75FA5 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AD02987B5AE00E75FA5 /* Photos.swift */; };
+		681D0AD32987B6D500E75FA5 /* PhotoCustomAlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */; };
+		681D0AD52987B70500E75FA5 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AD42987B70500E75FA5 /* Reusable.swift */; };
+		681D0AD72987B71000E75FA5 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AD62987B71000E75FA5 /* UICollectionView+Extension.swift */; };
+		681D0AD92987B74900E75FA5 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AD82987B74900E75FA5 /* UITableView+Extension.swift */; };
+		681D0ADB2987B7A800E75FA5 /* PhotoStyleEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */; };
+		681D0ADD2987B8AD00E75FA5 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0ADC2987B8AD00E75FA5 /* UIImage+Extension.swift */; };
+		681D0ADF2987B92600E75FA5 /* PhotoListCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0ADE2987B92600E75FA5 /* PhotoListCollectionCell.swift */; };
+		681D0AE12987B98500E75FA5 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AE02987B98500E75FA5 /* UIView+Extension.swift */; };
+		681D0AE32987C03300E75FA5 /* CutResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AE22987C03300E75FA5 /* CutResultViewController.swift */; };
+		681D0AEA2987D8A400E75FA5 /* PhotoCustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */; };
+		681D0AF02987DA7400E75FA5 /* InsetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AEF2987DA7400E75FA5 /* InsetType.swift */; };
+		F0DE8134FF29F5A9A1FFFAB4 /* Pods_PhotoCrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB17A699D8A587B4187D7D /* Pods_PhotoCrop.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		681D0AA32987B43700E75FA5 /* PhotoCrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoCrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		681D0AA62987B43700E75FA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		681D0AA82987B43700E75FA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		681D0AAD2987B43700E75FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		681D0AAF2987B43800E75FA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		681D0AB22987B43800E75FA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		681D0AB42987B43800E75FA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		681D0AC82987B47000E75FA5 /* CropImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropImageManager.swift; sourceTree = "<group>"; };
+		681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewController.swift; sourceTree = "<group>"; };
+		681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+PhotoEditViewController.swift"; sourceTree = "<group>"; };
+		681D0ACE2987B59400E75FA5 /* PhotoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListView.swift; sourceTree = "<group>"; };
+		681D0AD02987B5AE00E75FA5 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCustomAlbumView.swift; sourceTree = "<group>"; };
+		681D0AD42987B70500E75FA5 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		681D0AD62987B71000E75FA5 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		681D0AD82987B74900E75FA5 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoStyleEditView.swift; sourceTree = "<group>"; };
+		681D0ADC2987B8AD00E75FA5 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		681D0ADE2987B92600E75FA5 /* PhotoListCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCollectionCell.swift; sourceTree = "<group>"; };
+		681D0AE02987B98500E75FA5 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		681D0AE22987C03300E75FA5 /* CutResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutResultViewController.swift; sourceTree = "<group>"; };
+		681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCustomTableCell.swift; sourceTree = "<group>"; };
+		681D0AEF2987DA7400E75FA5 /* InsetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsetType.swift; sourceTree = "<group>"; };
+		942F24E7EFD59942BED6E6DB /* Pods-PhotoCrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoCrop.debug.xcconfig"; path = "Target Support Files/Pods-PhotoCrop/Pods-PhotoCrop.debug.xcconfig"; sourceTree = "<group>"; };
+		BE30FCA6D10EE17E28EE179D /* Pods-PhotoCrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoCrop.release.xcconfig"; path = "Target Support Files/Pods-PhotoCrop/Pods-PhotoCrop.release.xcconfig"; sourceTree = "<group>"; };
+		E0EB17A699D8A587B4187D7D /* Pods_PhotoCrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoCrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		681D0AA02987B43700E75FA5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0DE8134FF29F5A9A1FFFAB4 /* Pods_PhotoCrop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30341E5A910879A0800E7876 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				942F24E7EFD59942BED6E6DB /* Pods-PhotoCrop.debug.xcconfig */,
+				BE30FCA6D10EE17E28EE179D /* Pods-PhotoCrop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4EE442F99A488125890DC2D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0EB17A699D8A587B4187D7D /* Pods_PhotoCrop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		681D0A9A2987B43700E75FA5 = {
+			isa = PBXGroup;
+			children = (
+				681D0AA52987B43700E75FA5 /* PhotoCrop */,
+				681D0AA42987B43700E75FA5 /* Products */,
+				30341E5A910879A0800E7876 /* Pods */,
+				4EE442F99A488125890DC2D8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		681D0AA42987B43700E75FA5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AA32987B43700E75FA5 /* PhotoCrop.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		681D0AA52987B43700E75FA5 /* PhotoCrop */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AEE2987D93F00E75FA5 /* Scene */,
+				681D0AED2987D92300E75FA5 /* Model */,
+				681D0AE62987D84100E75FA5 /* Extension */,
+				681D0AE52987D82E00E75FA5 /* Presentations */,
+				681D0AE42987D80F00E75FA5 /* Manager */,
+				681D0AEB2987D90C00E75FA5 /* Protocol */,
+				681D0AAC2987B43700E75FA5 /* Main.storyboard */,
+				681D0AAF2987B43800E75FA5 /* Assets.xcassets */,
+				681D0AB12987B43800E75FA5 /* LaunchScreen.storyboard */,
+				681D0AB42987B43800E75FA5 /* Info.plist */,
+			);
+			path = PhotoCrop;
+			sourceTree = "<group>";
+		};
+		681D0AE42987D80F00E75FA5 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AC82987B47000E75FA5 /* CropImageManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		681D0AE52987D82E00E75FA5 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AEC2987D91900E75FA5 /* Cell */,
+				681D0AE82987D84F00E75FA5 /* View */,
+				681D0AE72987D84A00E75FA5 /* Controller */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
+		681D0AE62987D84100E75FA5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AD62987B71000E75FA5 /* UICollectionView+Extension.swift */,
+				681D0AD82987B74900E75FA5 /* UITableView+Extension.swift */,
+				681D0AE02987B98500E75FA5 /* UIView+Extension.swift */,
+				681D0ADC2987B8AD00E75FA5 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		681D0AE72987D84A00E75FA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */,
+				681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */,
+				681D0AE22987C03300E75FA5 /* CutResultViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		681D0AE82987D84F00E75FA5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */,
+				681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */,
+				681D0ACE2987B59400E75FA5 /* PhotoListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		681D0AEB2987D90C00E75FA5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AD42987B70500E75FA5 /* Reusable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		681D0AEC2987D91900E75FA5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				681D0ADE2987B92600E75FA5 /* PhotoListCollectionCell.swift */,
+				681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		681D0AED2987D92300E75FA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AD02987B5AE00E75FA5 /* Photos.swift */,
+				681D0AEF2987DA7400E75FA5 /* InsetType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		681D0AEE2987D93F00E75FA5 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AA62987B43700E75FA5 /* AppDelegate.swift */,
+				681D0AA82987B43700E75FA5 /* SceneDelegate.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		681D0AA22987B43700E75FA5 /* PhotoCrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 681D0AB72987B43800E75FA5 /* Build configuration list for PBXNativeTarget "PhotoCrop" */;
+			buildPhases = (
+				177D7DD36D1AA34C9FF1CC07 /* [CP] Check Pods Manifest.lock */,
+				681D0A9F2987B43700E75FA5 /* Sources */,
+				681D0AA02987B43700E75FA5 /* Frameworks */,
+				681D0AA12987B43700E75FA5 /* Resources */,
+				C682CF62C3FF23D98A6B8CFB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhotoCrop;
+			productName = PhotoCrop;
+			productReference = 681D0AA32987B43700E75FA5 /* PhotoCrop.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		681D0A9B2987B43700E75FA5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					681D0AA22987B43700E75FA5 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 681D0A9E2987B43700E75FA5 /* Build configuration list for PBXProject "PhotoCrop" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 681D0A9A2987B43700E75FA5;
+			packageReferences = (
+			);
+			productRefGroup = 681D0AA42987B43700E75FA5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				681D0AA22987B43700E75FA5 /* PhotoCrop */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		681D0AA12987B43700E75FA5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681D0AB32987B43800E75FA5 /* LaunchScreen.storyboard in Resources */,
+				681D0AB02987B43800E75FA5 /* Assets.xcassets in Resources */,
+				681D0AAE2987B43700E75FA5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		177D7DD36D1AA34C9FF1CC07 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhotoCrop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C682CF62C3FF23D98A6B8CFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoCrop/Pods-PhotoCrop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhotoCrop/Pods-PhotoCrop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhotoCrop/Pods-PhotoCrop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		681D0A9F2987B43700E75FA5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				681D0AC92987B47000E75FA5 /* CropImageManager.swift in Sources */,
+				681D0ADD2987B8AD00E75FA5 /* UIImage+Extension.swift in Sources */,
+				681D0AE12987B98500E75FA5 /* UIView+Extension.swift in Sources */,
+				681D0AD72987B71000E75FA5 /* UICollectionView+Extension.swift in Sources */,
+				681D0ACD2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift in Sources */,
+				681D0ACB2987B50700E75FA5 /* PhotoEditViewController.swift in Sources */,
+				681D0AD32987B6D500E75FA5 /* PhotoCustomAlbumView.swift in Sources */,
+				681D0ADF2987B92600E75FA5 /* PhotoListCollectionCell.swift in Sources */,
+				681D0AD52987B70500E75FA5 /* Reusable.swift in Sources */,
+				681D0AEA2987D8A400E75FA5 /* PhotoCustomTableCell.swift in Sources */,
+				681D0ACF2987B59400E75FA5 /* PhotoListView.swift in Sources */,
+				681D0AD12987B5AE00E75FA5 /* Photos.swift in Sources */,
+				681D0AA72987B43700E75FA5 /* AppDelegate.swift in Sources */,
+				681D0AF02987DA7400E75FA5 /* InsetType.swift in Sources */,
+				681D0ADB2987B7A800E75FA5 /* PhotoStyleEditView.swift in Sources */,
+				681D0AA92987B43700E75FA5 /* SceneDelegate.swift in Sources */,
+				681D0AD92987B74900E75FA5 /* UITableView+Extension.swift in Sources */,
+				681D0AE32987C03300E75FA5 /* CutResultViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		681D0AAC2987B43700E75FA5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				681D0AAD2987B43700E75FA5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		681D0AB12987B43800E75FA5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				681D0AB22987B43800E75FA5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		681D0AB52987B43800E75FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		681D0AB62987B43800E75FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		681D0AB82987B43800E75FA5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 942F24E7EFD59942BED6E6DB /* Pods-PhotoCrop.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2WF6FR3RY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhotoCrop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ann.beckwon.PhotoCrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		681D0AB92987B43800E75FA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE30FCA6D10EE17E28EE179D /* Pods-PhotoCrop.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X2WF6FR3RY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PhotoCrop/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ann.beckwon.PhotoCrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		681D0A9E2987B43700E75FA5 /* Build configuration list for PBXProject "PhotoCrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				681D0AB52987B43800E75FA5 /* Debug */,
+				681D0AB62987B43800E75FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		681D0AB72987B43800E75FA5 /* Build configuration list for PBXNativeTarget "PhotoCrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				681D0AB82987B43800E75FA5 /* Debug */,
+				681D0AB92987B43800E75FA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 681D0A9B2987B43700E75FA5 /* Project object */;
+}
