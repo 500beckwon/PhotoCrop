@@ -1,5 +1,5 @@
 //
-//  PHPhotoLibrary.swift
+//  PHPhotoLibrary+Extension.swift
 //  PhotoCrop
 //
 //  Created by ByungHoon Ann on 2023/02/01.
@@ -21,13 +21,16 @@ extension PHPhotoLibrary {
                     isAuthorization = true
                 } else {
                     requestAuthorization { status in
+                        
                         observable.onNext(status == .authorized)
                         observable.onCompleted()
                     }
                 }
             }
-            observable.onNext(isAuthorization)
-            observable.onCompleted()
+            defer {
+                observable.onNext(isAuthorization)
+                observable.onCompleted()
+            }
             return Disposables.create()
         }
     }

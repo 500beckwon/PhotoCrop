@@ -19,3 +19,4 @@ extension UICollectionView {
 }
 
 extension UICollectionViewCell: Reusable { }
+extension UICollectionReusableView: Reusable { }
