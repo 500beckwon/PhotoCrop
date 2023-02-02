@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol PhotoStyleEditViewDelegate: AnyObject {
     var selectedIndex: Int { get set}
@@ -13,16 +15,19 @@ protocol PhotoStyleEditViewDelegate: AnyObject {
 
 final class PhotoStyleEditView: UIView {
     weak var delegate: PhotoStyleEditViewDelegate?
+    
     private let stackView = UIStackView()
     private let containerView = UIView()
-    let cropType = InsetType.allCases
     
- 
+    let cropType = PhotoCropType.allCases
+    
     var selectedIndex: Int = 0 {
         didSet {
             delegate?.selectedIndex = selectedIndex
         }
     }
+    
+    let selectedCrop = PublishRelay<PhotoCropType>()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,11 +38,11 @@ final class PhotoStyleEditView: UIView {
         insertUI()
         basicSetUI()
         anchorUI()
+        arrange()
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        stackView.layer.cornerRadius = 18
         layer.cornerRadius = 18
     }
     
@@ -74,7 +79,7 @@ private extension PhotoStyleEditView {
         stackView.distribution = .fillEqually
         stackView.spacing = 4
         stackView.alpha = 1
-        stackView.spacing = 15
+        stackView.spacing = 1
     }
     
     func anchorUI() {
@@ -82,11 +87,8 @@ private extension PhotoStyleEditView {
             make.left.right.top.bottom.equalTo(self)
         }
         
-        stackView.snp.makeConstraints { make in
-            make.center.equalTo(containerView)
-            make.height.equalTo(36)
-            make.left.equalTo(containerView).offset(10)
-            make.right.equalTo(containerView).offset(-10)
+        stackView.snp.makeConstraints {
+            $0.edges.equalTo(containerView)
         }
     }
     
@@ -94,15 +96,8 @@ private extension PhotoStyleEditView {
         
         cropType.forEach {
             let button = UIButton(type: .system)
-           
-            button.titleLabel?.font = .boldSystemFont(ofSize: 15)
-            button.setTitle($0.title, for: .normal)
-            button.setTitle($0.title, for: .selected)
-            button.setTitleColor(.white, for: .normal)
-            button.setTitleColor(.white, for: .selected)
-            button.alpha = 0.5
+            button.setImage($0.image, for: .normal)
             button.backgroundColor = .clear
-            button.contentMode = .scaleAspectFill
             button.clipsToBounds = true
             button.tintColor = .clear
             button.addTarget(self, action: #selector(didSelectedButton), for: .touchUpInside)
@@ -111,7 +106,6 @@ private extension PhotoStyleEditView {
             button.snp.makeConstraints { make in
                 make.height.width.equalTo(30)
             }
-      
         }
     }
     

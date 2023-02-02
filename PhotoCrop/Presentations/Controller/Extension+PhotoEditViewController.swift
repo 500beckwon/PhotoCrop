@@ -5,10 +5,8 @@
 //  Created by ByungHoon Ann on 2023/01/30.
 //
 
-import Foundation
 import UIKit
 import RxSwift
-
 
 extension PhotoEditViewController {
     func insertUI() {
@@ -20,7 +18,6 @@ extension PhotoEditViewController {
         view.addSubview(photoListView)
         view.addSubview(bottomView)
         view.addSubview(cropPostButton)
-        view.addSubview(editModeButton)
         view.addSubview(rotateButton)
         view.addSubview(photoAlbumListView)
     }
@@ -31,7 +28,6 @@ extension PhotoEditViewController {
         editScrollViewBasicSet()
         cropPostButtonBasicSet()
         wallViewBasicSet()
-        editModeButtonBasicSet()
         cutPhotoBasicSet()
         photoAlbumListViewBasicSet()
         rotateButtonBasicSet()
@@ -47,7 +43,6 @@ extension PhotoEditViewController {
         photoListViewAnchor()
         bottomViewAnchor()
         cropPostButtonAnchor()
-        editModeButtonAnchor()
         rotateButtonAnchor()
         photoAlbumListViewAnchor()
     }
@@ -116,15 +111,6 @@ extension PhotoEditViewController {
         }
     }
     
-    func editModeButtonAnchor() {
-        editModeButton.snp.makeConstraints { make in
-            make.left.equalTo(view).offset(18)
-            make.bottom.equalTo(photoListView.snp.top).offset(-25)
-            make.width.equalTo(80)
-            make.height.equalTo(25)
-        }
-    }
-    
     func rotateButtonAnchor() {
         rotateButton.snp.makeConstraints { make in
             make.left.equalTo(view).offset(18)
@@ -160,6 +146,7 @@ extension PhotoEditViewController {
         titleButton.frame = CGRect(x: 10, y: 0, width: 100, height: 40)
         titleButton.backgroundColor = .clear
         titleButton.tintColor = .clear
+        
         titleButton.setTitle("갤러리", for: .normal)
         titleButton.setTitle("앨범선택", for: .selected)
         titleButton.titleLabel?.font = .boldSystemFont(ofSize: 14)
@@ -234,17 +221,6 @@ extension PhotoEditViewController {
         editingScrollView.bounces = true
         editingScrollView.showsVerticalScrollIndicator = false
         editingScrollView.showsHorizontalScrollIndicator = false
-        
-    }
-    
-    func editModeButtonBasicSet() {
-        editModeButton.setTitle("상세편집", for: .normal)
-        editModeButton.setTitleColor(.white, for: .normal)
-        editModeButton.backgroundColor = .darkGray
-        editModeButton.isHidden = true
-        editModeButton.isUserInteractionEnabled = false
-        editModeButton.titleLabel?.font = .boldSystemFont(ofSize: 12)
-        editModeButton.layer.cornerRadius = 10
     }
     
     func wallViewBasicSet() {
@@ -252,7 +228,6 @@ extension PhotoEditViewController {
         leftView.backgroundColor = .lightGray
         rightView.backgroundColor = .lightGray
         bottomView.backgroundColor = .lightGray
-
     }
     
     func cutPhotoBasicSet() {
@@ -293,7 +268,7 @@ extension PhotoEditViewController {
             .shared
             .sendResizeImage(s3Upload: false,
                              image: image,
-                             ratio: photoRatio,
+                            
                              time: now,
                              segment: selectedIndex,
                              scroll: editingScrollView.bounds,

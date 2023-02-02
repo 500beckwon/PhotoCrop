@@ -10,14 +10,11 @@ import RxSwift
 import SnapKit
 import UIKit
 
-
-
 extension PhotoEditViewController: UIGestureRecognizerDelegate { }
 
 final class PhotoEditViewController: UIViewController, PhotoStyleEditViewDelegate {
     lazy var comboImageView = UIImageView()
     lazy var titleButton = UIButton(type: .system)
-    var originalImageView: UIImageView?
     
     lazy var photoListView = PhotoListView()
     
@@ -33,7 +30,6 @@ final class PhotoEditViewController: UIViewController, PhotoStyleEditViewDelegat
     var albumListConstraint: Constraint?
     
     lazy var scrllImageView = UIImageView()
-    lazy var contanierView = UIView()
     lazy var editModeButton = UIButton(type: .system)
     lazy var cutPhotoButton = UIButton(type: .system)
     lazy var backButton = UIButton(type: .system)
@@ -68,15 +64,8 @@ final class PhotoEditViewController: UIViewController, PhotoStyleEditViewDelegat
         photoPermissionCheck()
     }
     
-    override  func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    
     override  func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        originalImageView?.image = nil
-        originalImageView = nil
     }
     
     func photoPermissionCheck() {
@@ -359,6 +348,7 @@ extension PhotoEditViewController {
         let minX = (newWitdh - screenWidth) / 2
         
         if newWitdh < screenWidth {
+            
             newWitdh *= 1.3
             height *= 1.3
         }
@@ -377,7 +367,7 @@ extension PhotoEditViewController {
         editScrollViewInSet(type: .horizontal, rect: rect, scrollCenter: scrollCenter)
     }
     
-    func squareSizing(type: InsetType) {
+    func squareSizing(type: PhotoCropType) {
         editScrollViewInSet(type: type, scrollCenter: true)
         editingScrollView.contentSize = CGSize(width: screenWidth, height: screenWidth)
         imageViewWidth?.update(offset: screenWidth)
@@ -419,7 +409,7 @@ extension PhotoEditViewController {
         editScrollViewInSet(type: .vertical, rect: rect, scrollCenter: scrollCenter)
     }
     
-    func editScrollViewInSet(type: InsetType, rect: CGRect = .zero, scrollCenter: Bool) {
+    func editScrollViewInSet(type: PhotoCropType, rect: CGRect = .zero, scrollCenter: Bool) {
         var insert: UIEdgeInsets = .zero
         switch type {
         case .square: insert = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
