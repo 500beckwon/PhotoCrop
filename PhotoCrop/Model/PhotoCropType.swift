@@ -7,13 +7,13 @@
 
 import Foundation
 
-enum InsetType: Int, CaseIterable {
+enum PhotoCropType: Int, CaseIterable {
     case square = 0
     case horizontal
     case vertical
 }
 
-extension InsetType {
+extension PhotoCropType {
     var title: String {
         switch self {
         case .square:
