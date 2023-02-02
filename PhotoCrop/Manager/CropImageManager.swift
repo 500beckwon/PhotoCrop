@@ -83,7 +83,7 @@ final class CropImageManager {
     
     func resizingAlbumImage(image: CGImage, type: ImageTypes.RawValue) -> Observable<CGImage?> {
         Observable.create { obsevable in
-            print(image.width, image.height, "최저 임금", type)
+           // print(image.width, image.height, "최저 임금", type)
             let width: CGFloat = 1080.0
             var height: CGFloat = 0.0
             switch type {
@@ -111,7 +111,7 @@ final class CropImageManager {
     }
     
     /// 서버 전송 및 Unity에 전달
-    func sendResizeImage(s3Upload: Bool = false, image: UIImage, ratio: String, time: String, segment: Int, scroll: CGRect, contentViewFrame: CGRect, zoomScale: CGFloat, edit: Bool = false, number: Int = 0, completion: ((UIImage?) -> Void)? = nil) {
+    func sendResizeImage(s3Upload: Bool = false, image: UIImage, time: String, segment: Int, scroll: CGRect, contentViewFrame: CGRect, zoomScale: CGFloat, edit: Bool = false, number: Int = 0, completion: ((UIImage?) -> Void)? = nil) {
         DispatchQueue
             .main
             .async { [weak self] in
@@ -131,6 +131,7 @@ final class CropImageManager {
                         guard let _cgImage = resultImage else { return }
                         let image = UIImage(cgImage: _cgImage)
                             completion?(image)
+                        //    completion?(__image)
                             if s3Upload == true {
                                 //self.uploadS3(image: image, imageName: "\(time).jpeg")
                             } else {
@@ -167,11 +168,11 @@ final class CropImageManager {
         UIGraphicsBeginImageContext(rect.size)
         
         let render = UIGraphicsImageRenderer(bounds: rect)
-        let images =  render.image { render in
+        let images = render.image { render in
             imageView.layer.render(in: render.cgContext)
         }
         UIGraphicsEndImageContext()
-       // originalImageView = nil
+        imageView.image = nil
         imageView.removeFromSuperview()
         return images
     }
@@ -224,14 +225,13 @@ final class CropImageManager {
         var width =  imageSize.width/zoomScale
         var height = (imageSize.width - imageSize.width/4)/zoomScale
         
-        let watchWidthRatio = screenWidth/contentViewFrame.width
-
-
+        let watchWidthRatio = screenWidth / (contentViewFrame.width / zoomScale)
+        
         if imageSize.width > imageSize.height {
             width = (imageSize.width * watchWidthRatio) / zoomScale
             height = (imageSize.height) / zoomScale
         }
-
+        
         let rect = CGRect(x: minX, y: minY, width: width, height: height)
         return cropPhotos(rect, imageView: imageView)
     }
@@ -250,15 +250,16 @@ final class CropImageManager {
         
         let ceilX = ceil(scroll.width/8)
         
-        let ratioX = (scroll.minX+ceilX)/contentViewFrame.width
-        let ratioY = (scroll.minY)/contentViewFrame.height
+        let ratioX = (scroll.minX+ceilX) / contentViewFrame.width
+        let ratioY = (scroll.minY) / contentViewFrame.height
+        
         let minX = ratioX * imageSize.width
         let minY = ratioY * imageSize.height
         
         var width =  (imageSize.height * 0.75) / zoomScale
         var height = (imageSize.height) / zoomScale
         
-        let watchHeightRatio = screenWidth/contentViewFrame.height
+        let watchHeightRatio = screenWidth / (contentViewFrame.height / zoomScale)
         
         if imageSize.height > imageSize.width {
             height = imageSize.height * watchHeightRatio / zoomScale
@@ -270,7 +271,7 @@ final class CropImageManager {
         return cropPhotos(rect, imageView: imageView)
     }
     
-    func getOriginialSizeImageView(image: UIImage, smallCheck: Bool = false) -> UIImageView {
+    func getOriginialSizeImageView(image: UIImage, smallCheck: Bool = false, zoomScale: CGFloat = 1.0) -> UIImageView {
         let originalImageView = UIImageView()
         originalImageView.contentMode = .scaleAspectFill
         var imageSize = image.size
@@ -279,8 +280,8 @@ final class CropImageManager {
             imageSize.width /= 3
             imageSize.height /= 3
         }
-        
-        originalImageView.frame = CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height)
+         
+        originalImageView.frame = CGRect(x: 0, y: 0, width: imageSize.width / zoomScale, height: imageSize.height / zoomScale)
         originalImageView.image = image
         return originalImageView
     }
