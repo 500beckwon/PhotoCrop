@@ -57,6 +57,17 @@ extension PhotoCropType {
         }
     }
     
+    var convertCGImageSize: CGSize {
+        switch self {
+        case .square:
+            return CGSize(width: 1080, height: 1080)
+        case .horizontal:
+            return CGSize(width: 1080, height: 810)
+        case .vertical:
+            return CGSize(width: 1080, height: 1440)
+        }
+    }
+    
     var contentInset: UIEdgeInsets {
         let edge: UIEdgeInsets
         switch self {
@@ -70,9 +81,9 @@ extension PhotoCropType {
         return edge
     }
     
-    func scrollContentSize(image: UIImage) -> CGSize {
+    func scrollContentSize(imageSize: CGSize) -> CGSize {
         var size = CGSize(width: screenWidth, height: screenWidth)
-        let imageSize = image.size
+
         switch self {
         case .square:
             if imageSize.width > imageSize.height {
@@ -98,7 +109,93 @@ extension PhotoCropType {
         return size
     }
     
+    func cropScrollOrigin(imageSize: CGSize,
+                          startPoint: CGPoint,
+                          contentSize: CGSize
+                         ) -> CGPoint {
+        let xPadding = self == .vertical ? curtainWidth : 0
+        let yPadding = self == .horizontal ? curtainWidth : 0
+        
+        let ratioX = (startPoint.x + xPadding)/contentSize.width
+        let ratioY = (startPoint.y + yPadding)/contentSize.height
+        
+        let minX = ratioX * imageSize.width
+        let minY = ratioY * imageSize.height
+        
+        return CGPoint(x: minX, y: minY)
+    }
+    
+    func cropImageSize(imageSize: CGSize,
+                       contentSize: CGSize,
+                       zoomScale: CGFloat) -> CGSize {
+        var sizeRatio: CGFloat = 1
+        var width =  imageSize.width/zoomScale
+        var height = imageSize.width/zoomScale
+        switch self {
+        case .square:
+            if imageSize.width > imageSize.height {
+                width = imageSize.height/zoomScale
+                height = imageSize.height/zoomScale
+            }
+        case .horizontal:
+            sizeRatio = screenWidth / (contentSize.width / zoomScale)
+            
+            if imageSize.width > imageSize.height {
+                width = (imageSize.width * sizeRatio) / zoomScale
+                height = (imageSize.height) / zoomScale
+            } else {
+                width =  imageSize.width/zoomScale
+                height = (imageSize.width - imageSize.width/4)/zoomScale
+            }
+        case .vertical:
+            sizeRatio = screenWidth / (contentSize.height / zoomScale)
+            
+            if imageSize.height > imageSize.width {
+                height = imageSize.height * sizeRatio / zoomScale
+                width =  (imageSize.width) / zoomScale
+            } else {
+                width =  (imageSize.height * 0.75) / zoomScale
+                height = (imageSize.height) / zoomScale
+            }
+        }
+
+        return CGSize(width: width, height: height)
+    }
+
+//    func cropConvertRect(imageSize: CGSize,
+//                         startPoint: CGPoint,
+//                         contentSize: CGSize,
+//                         zoomScale: CGFloat) -> CGRect {
+    func cropConvertRect(cropInfo: CropInformation) -> CGRect {
+        var imageSize = cropInfo.selectedImage.size
+        if imageSize.height > 2000 || imageSize.width > 2000 {
+            imageSize.width /= 3
+            imageSize.height /= 3
+        }
+        
+        let point = cropScrollOrigin(imageSize: imageSize,
+                                     startPoint: cropInfo.startPoint,
+                                     contentSize: cropInfo.contentSize)
+        
+        let size = cropImageSize(imageSize: imageSize,
+                                 contentSize: cropInfo.contentSize,
+                                 zoomScale: cropInfo.zoomScale)
+
+        return CGRect(origin: point, size: size)
+    }
+    
     func imageViewWidth() {
         
     }
 }
+
+/*
+ let point = cropScrollOrigin(imageSize: imageSize,
+                              startPoint: startPoint,
+                              contentSize: contentSize)
+
+ let size = cropSize(imageSize: imageSize,
+                     contentSize: contentSize, zoomScale: zoomScale)
+
+ return CGRect(origin: point, size: size)
+ */

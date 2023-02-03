@@ -11,4 +11,5 @@ struct AssetAlbum {
     let asset: PHAsset
     let albumTitle: String
     let count: Int
+    let phAssetCollection: [PHAsset]
 }
