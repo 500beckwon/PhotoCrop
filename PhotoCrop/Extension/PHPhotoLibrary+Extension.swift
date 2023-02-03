@@ -8,7 +8,6 @@
 import Photos
 import RxSwift
 
-
 extension PHPhotoLibrary {
     static var authorize: Observable<Bool> {
         return Observable.create { observable in

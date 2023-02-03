@@ -43,11 +43,9 @@ final class ImageViewListView: UIView {
 
 extension ImageViewListView {
     func bindUI() {
-        
         assetList
             .do(onNext: { [weak self] in
                 guard let firstItem = $0.first else { return }
-                
                 self?.showFirstItem.accept(firstItem)
             })
             .bind(to: collectionView.rx

@@ -162,10 +162,6 @@ extension PhotoCropType {
         return CGSize(width: width, height: height)
     }
 
-//    func cropConvertRect(imageSize: CGSize,
-//                         startPoint: CGPoint,
-//                         contentSize: CGSize,
-//                         zoomScale: CGFloat) -> CGRect {
     func cropConvertRect(cropInfo: CropInformation) -> CGRect {
         var imageSize = cropInfo.selectedImage.size
         if imageSize.height > 2000 || imageSize.width > 2000 {
@@ -188,14 +184,3 @@ extension PhotoCropType {
         
     }
 }
-
-/*
- let point = cropScrollOrigin(imageSize: imageSize,
-                              startPoint: startPoint,
-                              contentSize: contentSize)
-
- let size = cropSize(imageSize: imageSize,
-                     contentSize: contentSize, zoomScale: zoomScale)
-
- return CGRect(origin: point, size: size)
- */

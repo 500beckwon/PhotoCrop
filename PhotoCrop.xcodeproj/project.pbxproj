@@ -244,7 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				6871FDFE298D133C00769C0B /* Album */,
-				6871FDF9298D12F200769C0B /* Edit */,
+				6871FDF9298D12F200769C0B /* PhotoEdit */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,19 +267,9 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		681D0AEC2987D91900E75FA5 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				681D0ADE2987B92600E75FA5 /* PhotoListCollectionCell.swift */,
-				681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		681D0AED2987D92300E75FA5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				681D0AD02987B5AE00E75FA5 /* Photos.swift */,
 				681D0AEF2987DA7400E75FA5 /* PhotoCropType.swift */,
 				687F7220298A699F00F6FC07 /* PHImage.swift */,
 				683371B9298B8334006CBD3D /* AlbumVarities.swift */,
@@ -301,29 +291,25 @@
 		6871FDEE298CCD3700769C0B /* Regacy */ = {
 			isa = PBXGroup;
 			children = (
-				681D0AEC2987D91900E75FA5 /* Cell */,
-				681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */,
-				681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */,
-				681D0ACE2987B59400E75FA5 /* PhotoListView.swift */,
-				681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */,
-				681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */,
-				681D0AE22987C03300E75FA5 /* CutResultViewController.swift */,
+				6871FE15298D1BAF00769C0B /* Regacy+Model */,
+				6871FE14298D1BA300769C0B /* Regacy+Controller */,
+				6871FE13298D1B9500769C0B /* Regacy+View */,
 			);
 			path = Regacy;
 			sourceTree = "<group>";
 		};
-		6871FDF9298D12F200769C0B /* Edit */ = {
+		6871FDF9298D12F200769C0B /* PhotoEdit */ = {
 			isa = PBXGroup;
 			children = (
-				6871FDFD298D132500769C0B /* Edit+Controller */,
-				6871FDFC298D131D00769C0B /* Edit+UseCase */,
-				6871FDFB298D131600769C0B /* Edit+ViewModel */,
-				6871FDFA298D12FD00769C0B /* Edit+View */,
+				6871FDFD298D132500769C0B /* PhotoEdit+Controller */,
+				6871FDFC298D131D00769C0B /* PhotoEdit+UseCase */,
+				6871FDFB298D131600769C0B /* PhotoEdit+ViewModel */,
+				6871FDFA298D12FD00769C0B /* PhotoEdit+View */,
 			);
-			path = Edit;
+			path = PhotoEdit;
 			sourceTree = "<group>";
 		};
-		6871FDFA298D12FD00769C0B /* Edit+View */ = {
+		6871FDFA298D12FD00769C0B /* PhotoEdit+View */ = {
 			isa = PBXGroup;
 			children = (
 				687F7218298A5E7A00F6FC07 /* ImageViewListView.swift */,
@@ -332,32 +318,32 @@
 				68124F822988E71C00390C6E /* PhotoSelectView.swift */,
 				687F7222298A6E7A00F6FC07 /* ImageListCollectionCell.swift */,
 			);
-			path = "Edit+View";
+			path = "PhotoEdit+View";
 			sourceTree = "<group>";
 		};
-		6871FDFB298D131600769C0B /* Edit+ViewModel */ = {
+		6871FDFB298D131600769C0B /* PhotoEdit+ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				6871FDEC298CB08200769C0B /* PhotoEditViewModel.swift */,
 				6871FDEA298C9DF900769C0B /* PhotoSelectedViewModel.swift */,
 			);
-			path = "Edit+ViewModel";
+			path = "PhotoEdit+ViewModel";
 			sourceTree = "<group>";
 		};
-		6871FDFC298D131D00769C0B /* Edit+UseCase */ = {
+		6871FDFC298D131D00769C0B /* PhotoEdit+UseCase */ = {
 			isa = PBXGroup;
 			children = (
 				6871FDF5298D0F3700769C0B /* PhotoEditUseCase.swift */,
 			);
-			path = "Edit+UseCase";
+			path = "PhotoEdit+UseCase";
 			sourceTree = "<group>";
 		};
-		6871FDFD298D132500769C0B /* Edit+Controller */ = {
+		6871FDFD298D132500769C0B /* PhotoEdit+Controller */ = {
 			isa = PBXGroup;
 			children = (
 				687F7216298A462B00F6FC07 /* PhotoListViewController.swift */,
 			);
-			path = "Edit+Controller";
+			path = "PhotoEdit+Controller";
 			sourceTree = "<group>";
 		};
 		6871FDFE298D133C00769C0B /* Album */ = {
@@ -383,6 +369,36 @@
 				6871FDF3298D00D200769C0B /* ImageAlbumCollectionCell.swift */,
 			);
 			path = "Album+View";
+			sourceTree = "<group>";
+		};
+		6871FE13298D1B9500769C0B /* Regacy+View */ = {
+			isa = PBXGroup;
+			children = (
+				681D0ADE2987B92600E75FA5 /* PhotoListCollectionCell.swift */,
+				681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */,
+				681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */,
+				681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */,
+				681D0ACE2987B59400E75FA5 /* PhotoListView.swift */,
+			);
+			path = "Regacy+View";
+			sourceTree = "<group>";
+		};
+		6871FE14298D1BA300769C0B /* Regacy+Controller */ = {
+			isa = PBXGroup;
+			children = (
+				681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */,
+				681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */,
+				681D0AE22987C03300E75FA5 /* CutResultViewController.swift */,
+			);
+			path = "Regacy+Controller";
+			sourceTree = "<group>";
+		};
+		6871FE15298D1BAF00769C0B /* Regacy+Model */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AD02987B5AE00E75FA5 /* Photos.swift */,
+			);
+			path = "Regacy+Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

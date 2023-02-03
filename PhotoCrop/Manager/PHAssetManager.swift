@@ -101,7 +101,7 @@ extension PHAssetManager {
             observable.onNext(albums)
             return Disposables.create()
         }
-         
+        
     }
     
     func getPHAssetCollection() -> [PHCollection] {
@@ -111,7 +111,7 @@ extension PHAssetManager {
             .fetchTopLevelUserCollections(with: nil)
             .enumerateObjects { assetCollection, _, _ in
                 allAssetCollections.append(assetCollection)
-        }
+            }
         return allAssetCollections
     }
     
@@ -150,8 +150,8 @@ extension PHAssetManager {
                     observable.onCompleted()
                 }
             return Disposables.create()
-         }
-     }
+        }
+    }
     
     func getImageList(
         assetList: [PHAsset],

@@ -72,7 +72,6 @@ final class PHAssetConfiguration: NSObject {
             options.isNetworkAccessAllowed = true
             return options
         }
-        
     }
 }
 
