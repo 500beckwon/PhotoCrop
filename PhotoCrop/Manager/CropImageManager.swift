@@ -110,6 +110,58 @@ final class CropImageManager {
         }
     }
     
+    func convertToUnityImage(image: UIImage,
+                             imageName: String,
+                             cropType: PhotoCropType,
+                             startPoint: CGPoint,
+                             zoomScale: CGFloat) {
+        let imageSize = image.size
+        
+    }
+    
+    func newCrop(cropInfo: CropInformation) -> Observable<UIImage?> {
+        let imageView = makeImageView(image: cropInfo.selectedImage)
+        let rect = cropInfo.cropType.cropConvertRect(cropInfo: cropInfo)
+        let cropImage = cropPhotos(rect, imageView: imageView)
+
+        return Observable.create { observable  in
+            if let cgImage = cropImage.cgImage {
+                let size = cropInfo.cropType.convertCGImageSize
+                let context = CGContext( // #1
+                    data: nil,
+                    width: Int(size.width),
+                    height: Int(size.height),
+                    bitsPerComponent: 16,
+                    bytesPerRow: 0,
+                    space: CGColorSpaceCreateDeviceRGB(),
+                    bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue)!
+                context.interpolationQuality = .medium // #2
+                context.draw(cgImage, in: CGRect(origin: .zero, size: size))
+                //let resultCGImage = context.makeImage()
+                if let resultCGImage = context.makeImage() {
+                    let resultImage = UIImage(cgImage: resultCGImage)
+                    observable.onNext(resultImage)
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func makeImageView(image: UIImage) -> UIImageView {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        var imageSize = image.size
+        
+        if imageSize.height > 2000 {
+            imageSize.width /= 3
+            imageSize.height /= 3
+        }
+         
+        imageView.frame = CGRect(origin: .zero, size: imageSize)
+        imageView.image = image
+        return imageView
+    }
+    
     /// 서버 전송 및 Unity에 전달
     func sendResizeImage(s3Upload: Bool = false, image: UIImage, time: String, segment: Int, scroll: CGRect, contentViewFrame: CGRect, zoomScale: CGFloat, edit: Bool = false, number: Int = 0, completion: ((UIImage?) -> Void)? = nil) {
         DispatchQueue
@@ -123,7 +175,6 @@ final class CropImageManager {
                                                   zoomScale: zoomScale)
                 
                 if let image = cropImage?.cgImage {
-                    let __image = UIImage(cgImage: image)
                     self.resizingAlbumImage(image: image, type: segment)
                         .subscribe (onNext:{ [weak self] resultImage in
                         guard let self = self else { return }
@@ -166,7 +217,6 @@ final class CropImageManager {
     
     func cropPhotos(_ rect: CGRect, imageView: UIImageView) -> UIImage {
         UIGraphicsBeginImageContext(rect.size)
-        
         let render = UIGraphicsImageRenderer(bounds: rect)
         let images = render.image { render in
             imageView.layer.render(in: render.cgContext)
@@ -215,7 +265,6 @@ final class CropImageManager {
         let imageView = getOriginialSizeImageView(image: image, smallCheck: true)
         
         let ceilX = ceil(scroll.height/8)
-        
         let ratioX = scroll.minX/contentViewFrame.width
         let ratioY = (scroll.minY + ceilX)/contentViewFrame.height
         
@@ -239,7 +288,6 @@ final class CropImageManager {
     // MARK: - 세로형자르기
     
     func verticalCrop(image: UIImage, scroll: CGRect, contentViewFrame: CGRect, zoomScale: CGFloat) -> UIImage {
-        print("원본사이즈", image.size)
         var imageSize = image.size
         if imageSize.height > 2000 {
             imageSize.width /= 3
@@ -249,7 +297,6 @@ final class CropImageManager {
         let imageView = getOriginialSizeImageView(image: image)
         
         let ceilX = ceil(scroll.width/8)
-        
         let ratioX = (scroll.minX+ceilX) / contentViewFrame.width
         let ratioY = (scroll.minY) / contentViewFrame.height
         

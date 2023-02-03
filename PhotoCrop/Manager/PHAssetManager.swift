@@ -82,17 +82,18 @@ extension PHAssetManager {
                 $0.enumerateObjects { album, index, _ in
                     let title = album.localizedTitle ?? "제목없음"
                     var thumbnailAsset = PHAsset()
-                    fetchResult = PHAsset.fetchAssets(in: album, options: nil)
+                    fetchResult = PHAsset.fetchAssets(in: album, options: self.phFetchOptions)
                     if let albumCount = fetchResult?.count, albumCount > 0 {
                         switch album.assetCollectionType {
                         case .album : thumbnailAsset = (fetchResult?.firstObject)!
                             
                         default: thumbnailAsset = (fetchResult?.lastObject)!
                         }
-                        
+                        let list = fetchResult?.objects(at: IndexSet(0..<albumCount)) ?? []
                         let assetAlbum = AssetAlbum(asset: thumbnailAsset,
                                                     albumTitle: title.localTitleConfirm(),
-                                                    count: albumCount)
+                                                    count: albumCount,
+                                                    phAssetCollection: list)
                         albums.append(assetAlbum)
                     }
                 }
@@ -120,6 +121,16 @@ extension PHAssetManager {
             allAssets.append(asset)
         }
         return allAssets
+    }
+    
+    func getImage(asset: PHAsset, completion: @escaping(UIImage?) -> Void) {
+        let size = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
+        PHImageManager.default().requestImage(for: asset,
+                                              targetSize: size,
+                                              contentMode: .aspectFill,
+                                              options: imageRequestOptions) { image, _ in
+            completion(image)
+        }
     }
     
     func getImage(

@@ -22,10 +22,12 @@ final class ImageViewListView: UIView {
     }()
     
     private let disposeBag = DisposeBag()
+    private let cellID = ImageListCollectionCell.reuseIdentifier
     
     let assetList = PublishRelay<[PHImage]>()
     let itemSelected = PublishRelay<PHImage>()
-    
+    let showFirstItem = PublishRelay<PHImage>()
+
     init() {
         super.init(frame: .zero)
         insertUI()
@@ -41,26 +43,27 @@ final class ImageViewListView: UIView {
 
 extension ImageViewListView {
     func bindUI() {
+        
         assetList
-            .bind(to: collectionView.rx.items(cellIdentifier: "ImageListCollectionCell", cellType: ImageListCollectionCell.self)) { index, item, cell in
+            .do(onNext: { [weak self] in
+                guard let firstItem = $0.first else { return }
+                
+                self?.showFirstItem.accept(firstItem)
+            })
+            .bind(to: collectionView.rx
+                .items(cellIdentifier: cellID,
+                       cellType: ImageListCollectionCell.self)) { index, item, cell in
                 cell.configureCell(phImage: item)
             }.disposed(by: disposeBag)
         
-        collectionView.rx.modelSelected(PHImage.self)
+        collectionView.rx
+            .modelSelected(PHImage.self)
             .bind(to: itemSelected)
             .disposed(by: disposeBag)
-        
-        let assetList = PHAssetManager.shared.getPHAssets(with: .image)
-        PHAssetManager.shared.getImageList(assetList: assetList)
-            .bind(to: self.assetList)
-            .disposed(by: disposeBag)
-        
-        
     }
 }
 
 extension ImageViewListView {
-    
     func insertUI() {
         addSubview(collectionView)
     }
@@ -81,8 +84,5 @@ extension ImageViewListView {
     
     func collectionViewBasicSet() {
         collectionView.registerCell(ImageListCollectionCell.self)
-        
     }
-    
-   
 }
