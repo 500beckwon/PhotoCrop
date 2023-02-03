@@ -62,6 +62,7 @@ final class PhotoEditViewController: UIViewController, PhotoStyleEditViewDelegat
         basicSetUI()
         anchorUI()
         photoPermissionCheck()
+        
     }
     
     override  func viewWillDisappear(_ animated: Bool) {
