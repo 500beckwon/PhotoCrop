@@ -16,7 +16,6 @@ extension UIImage {
             let origin = CGPoint(x: rotatedSize.width / 2.0,
                                  y: rotatedSize.height / 2.0)
             context.translateBy(x: origin.x, y: origin.y)
-            print(radians)
             context.rotate(by: radians)
             draw(in: CGRect(x: -origin.y, y: -origin.x,
                             width: size.width, height: size.height))

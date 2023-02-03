@@ -65,7 +65,6 @@ final class CutResultViewController: UIViewController {
     
     func anchorUI() {
         guard let image = image else { return }
-        print(image.size)
         scrollView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
             

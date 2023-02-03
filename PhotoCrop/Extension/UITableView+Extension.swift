@@ -19,8 +19,6 @@ extension UITableView {
     func initCellForItem<T: UITableViewCell>(indexPath: IndexPath) -> T {
         return self.cellForRow(at: indexPath) as! T
     }
-    
-    
 }
 
 extension UITableViewCell: Reusable { }

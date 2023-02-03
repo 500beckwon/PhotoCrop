@@ -33,7 +33,6 @@
 		681D0AE32987C03300E75FA5 /* CutResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AE22987C03300E75FA5 /* CutResultViewController.swift */; };
 		681D0AEA2987D8A400E75FA5 /* PhotoCustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */; };
 		681D0AF02987DA7400E75FA5 /* PhotoCropType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681D0AEF2987DA7400E75FA5 /* PhotoCropType.swift */; };
-		683371B1298B4516006CBD3D /* ImageAlbumListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371B0298B4516006CBD3D /* ImageAlbumListView.swift */; };
 		683371B4298B4571006CBD3D /* BasicViewDrawRull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371B3298B4571006CBD3D /* BasicViewDrawRull.swift */; };
 		683371B6298B45AF006CBD3D /* BasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371B5298B45AF006CBD3D /* BasicView.swift */; };
 		683371B8298B7C24006CBD3D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371B7298B7C24006CBD3D /* UIImageView+Extension.swift */; };
@@ -41,6 +40,13 @@
 		683371BC298BA1C4006CBD3D /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371BB298BA1C4006CBD3D /* String+Extension.swift */; };
 		683371BE298BA447006CBD3D /* AssetAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371BD298BA447006CBD3D /* AssetAlbum.swift */; };
 		683371C0298BAA73006CBD3D /* AlbumListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683371BF298BAA73006CBD3D /* AlbumListViewController.swift */; };
+		6871FDEB298C9DF900769C0B /* PhotoSelectedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDEA298C9DF900769C0B /* PhotoSelectedViewModel.swift */; };
+		6871FDED298CB08200769C0B /* PhotoEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDEC298CB08200769C0B /* PhotoEditViewModel.swift */; };
+		6871FDF0298CEB8900769C0B /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDEF298CEB8900769C0B /* UIScrollView+Extension.swift */; };
+		6871FDF2298CF81800769C0B /* CropInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDF1298CF81800769C0B /* CropInformation.swift */; };
+		6871FDF4298D00D200769C0B /* ImageAlbumCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDF3298D00D200769C0B /* ImageAlbumCollectionCell.swift */; };
+		6871FDF6298D0F3700769C0B /* PhotoEditUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDF5298D0F3700769C0B /* PhotoEditUseCase.swift */; };
+		6871FDF8298D10AC00769C0B /* PhotoEditTypealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6871FDF7298D10AC00769C0B /* PhotoEditTypealias.swift */; };
 		687F7217298A462B00F6FC07 /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F7216298A462B00F6FC07 /* PhotoListViewController.swift */; };
 		687F7219298A5E7A00F6FC07 /* ImageViewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F7218298A5E7A00F6FC07 /* ImageViewListView.swift */; };
 		687F721B298A642300F6FC07 /* PHPhotoLibrary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 687F721A298A642300F6FC07 /* PHPhotoLibrary+Extension.swift */; };
@@ -91,7 +97,6 @@
 		681D0AE22987C03300E75FA5 /* CutResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CutResultViewController.swift; sourceTree = "<group>"; };
 		681D0AE92987D8A400E75FA5 /* PhotoCustomTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCustomTableCell.swift; sourceTree = "<group>"; };
 		681D0AEF2987DA7400E75FA5 /* PhotoCropType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCropType.swift; sourceTree = "<group>"; };
-		683371B0298B4516006CBD3D /* ImageAlbumListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAlbumListView.swift; sourceTree = "<group>"; };
 		683371B3298B4571006CBD3D /* BasicViewDrawRull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewDrawRull.swift; sourceTree = "<group>"; };
 		683371B5298B45AF006CBD3D /* BasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicView.swift; sourceTree = "<group>"; };
 		683371B7298B7C24006CBD3D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -99,6 +104,13 @@
 		683371BB298BA1C4006CBD3D /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		683371BD298BA447006CBD3D /* AssetAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetAlbum.swift; sourceTree = "<group>"; };
 		683371BF298BAA73006CBD3D /* AlbumListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumListViewController.swift; sourceTree = "<group>"; };
+		6871FDEA298C9DF900769C0B /* PhotoSelectedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSelectedViewModel.swift; sourceTree = "<group>"; };
+		6871FDEC298CB08200769C0B /* PhotoEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditViewModel.swift; sourceTree = "<group>"; };
+		6871FDEF298CEB8900769C0B /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		6871FDF1298CF81800769C0B /* CropInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropInformation.swift; sourceTree = "<group>"; };
+		6871FDF3298D00D200769C0B /* ImageAlbumCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAlbumCollectionCell.swift; sourceTree = "<group>"; };
+		6871FDF5298D0F3700769C0B /* PhotoEditUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditUseCase.swift; sourceTree = "<group>"; };
+		6871FDF7298D10AC00769C0B /* PhotoEditTypealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoEditTypealias.swift; sourceTree = "<group>"; };
 		687F7216298A462B00F6FC07 /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
 		687F7218298A5E7A00F6FC07 /* ImageViewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewListView.swift; sourceTree = "<group>"; };
 		687F721A298A642300F6FC07 /* PHPhotoLibrary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PHPhotoLibrary+Extension.swift"; sourceTree = "<group>"; };
@@ -179,6 +191,7 @@
 		681D0AA52987B43700E75FA5 /* PhotoCrop */ = {
 			isa = PBXGroup;
 			children = (
+				6871FDEE298CCD3700769C0B /* Regacy */,
 				681D0AEE2987D93F00E75FA5 /* Scene */,
 				681D0AED2987D92300E75FA5 /* Model */,
 				681D0AE62987D84100E75FA5 /* Extension */,
@@ -206,7 +219,6 @@
 		681D0AE52987D82E00E75FA5 /* Presentations */ = {
 			isa = PBXGroup;
 			children = (
-				681D0AEC2987D91900E75FA5 /* Cell */,
 				681D0AE82987D84F00E75FA5 /* View */,
 				681D0AE72987D84A00E75FA5 /* Controller */,
 			);
@@ -221,6 +233,7 @@
 				681D0AE02987B98500E75FA5 /* UIView+Extension.swift */,
 				681D0ADC2987B8AD00E75FA5 /* UIImage+Extension.swift */,
 				683371B7298B7C24006CBD3D /* UIImageView+Extension.swift */,
+				6871FDEF298CEB8900769C0B /* UIScrollView+Extension.swift */,
 				687F721A298A642300F6FC07 /* PHPhotoLibrary+Extension.swift */,
 				683371BB298BA1C4006CBD3D /* String+Extension.swift */,
 			);
@@ -230,14 +243,8 @@
 		681D0AE72987D84A00E75FA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */,
-				681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */,
-				681D0AE22987C03300E75FA5 /* CutResultViewController.swift */,
-				687F7216298A462B00F6FC07 /* PhotoListViewController.swift */,
-				687F7218298A5E7A00F6FC07 /* ImageViewListView.swift */,
-				687F7222298A6E7A00F6FC07 /* ImageListCollectionCell.swift */,
-				683371B0298B4516006CBD3D /* ImageAlbumListView.swift */,
-				683371BF298BAA73006CBD3D /* AlbumListViewController.swift */,
+				6871FDFE298D133C00769C0B /* Album */,
+				6871FDF9298D12F200769C0B /* Edit */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -245,12 +252,6 @@
 		681D0AE82987D84F00E75FA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */,
-				681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */,
-				681D0ACE2987B59400E75FA5 /* PhotoListView.swift */,
-				68124F822988E71C00390C6E /* PhotoSelectView.swift */,
-				68124F842988EAFC00390C6E /* PhotoCropTypeButton.swift */,
-				68124F862988EB6B00390C6E /* CropButton.swift */,
 				683371B5298B45AF006CBD3D /* BasicView.swift */,
 			);
 			path = View;
@@ -261,6 +262,7 @@
 			children = (
 				681D0AD42987B70500E75FA5 /* Reusable.swift */,
 				683371B3298B4571006CBD3D /* BasicViewDrawRull.swift */,
+				6871FDF1298CF81800769C0B /* CropInformation.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -282,6 +284,7 @@
 				687F7220298A699F00F6FC07 /* PHImage.swift */,
 				683371B9298B8334006CBD3D /* AlbumVarities.swift */,
 				683371BD298BA447006CBD3D /* AssetAlbum.swift */,
+				6871FDF7298D10AC00769C0B /* PhotoEditTypealias.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,6 +296,93 @@
 				681D0AA82987B43700E75FA5 /* SceneDelegate.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		6871FDEE298CCD3700769C0B /* Regacy */ = {
+			isa = PBXGroup;
+			children = (
+				681D0AEC2987D91900E75FA5 /* Cell */,
+				681D0AD22987B6D500E75FA5 /* PhotoCustomAlbumView.swift */,
+				681D0ADA2987B7A800E75FA5 /* PhotoStyleEditView.swift */,
+				681D0ACE2987B59400E75FA5 /* PhotoListView.swift */,
+				681D0ACC2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift */,
+				681D0ACA2987B50700E75FA5 /* PhotoEditViewController.swift */,
+				681D0AE22987C03300E75FA5 /* CutResultViewController.swift */,
+			);
+			path = Regacy;
+			sourceTree = "<group>";
+		};
+		6871FDF9298D12F200769C0B /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				6871FDFD298D132500769C0B /* Edit+Controller */,
+				6871FDFC298D131D00769C0B /* Edit+UseCase */,
+				6871FDFB298D131600769C0B /* Edit+ViewModel */,
+				6871FDFA298D12FD00769C0B /* Edit+View */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		6871FDFA298D12FD00769C0B /* Edit+View */ = {
+			isa = PBXGroup;
+			children = (
+				687F7218298A5E7A00F6FC07 /* ImageViewListView.swift */,
+				68124F842988EAFC00390C6E /* PhotoCropTypeButton.swift */,
+				68124F862988EB6B00390C6E /* CropButton.swift */,
+				68124F822988E71C00390C6E /* PhotoSelectView.swift */,
+				687F7222298A6E7A00F6FC07 /* ImageListCollectionCell.swift */,
+			);
+			path = "Edit+View";
+			sourceTree = "<group>";
+		};
+		6871FDFB298D131600769C0B /* Edit+ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6871FDEC298CB08200769C0B /* PhotoEditViewModel.swift */,
+				6871FDEA298C9DF900769C0B /* PhotoSelectedViewModel.swift */,
+			);
+			path = "Edit+ViewModel";
+			sourceTree = "<group>";
+		};
+		6871FDFC298D131D00769C0B /* Edit+UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				6871FDF5298D0F3700769C0B /* PhotoEditUseCase.swift */,
+			);
+			path = "Edit+UseCase";
+			sourceTree = "<group>";
+		};
+		6871FDFD298D132500769C0B /* Edit+Controller */ = {
+			isa = PBXGroup;
+			children = (
+				687F7216298A462B00F6FC07 /* PhotoListViewController.swift */,
+			);
+			path = "Edit+Controller";
+			sourceTree = "<group>";
+		};
+		6871FDFE298D133C00769C0B /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				6871FE00298D138200769C0B /* Album+View */,
+				6871FDFF298D134200769C0B /* Album+Controller */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		6871FDFF298D134200769C0B /* Album+Controller */ = {
+			isa = PBXGroup;
+			children = (
+				683371BF298BAA73006CBD3D /* AlbumListViewController.swift */,
+			);
+			path = "Album+Controller";
+			sourceTree = "<group>";
+		};
+		6871FE00298D138200769C0B /* Album+View */ = {
+			isa = PBXGroup;
+			children = (
+				6871FDF3298D00D200769C0B /* ImageAlbumCollectionCell.swift */,
+			);
+			path = "Album+View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,17 +541,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6871FDF6298D0F3700769C0B /* PhotoEditUseCase.swift in Sources */,
 				681D0AC92987B47000E75FA5 /* CropImageManager.swift in Sources */,
 				681D0ADD2987B8AD00E75FA5 /* UIImage+Extension.swift in Sources */,
 				681D0AE12987B98500E75FA5 /* UIView+Extension.swift in Sources */,
 				681D0AD72987B71000E75FA5 /* UICollectionView+Extension.swift in Sources */,
 				681D0ACD2987B51F00E75FA5 /* Extension+PhotoEditViewController.swift in Sources */,
-				683371B1298B4516006CBD3D /* ImageAlbumListView.swift in Sources */,
+				6871FDF8298D10AC00769C0B /* PhotoEditTypealias.swift in Sources */,
 				681D0ACB2987B50700E75FA5 /* PhotoEditViewController.swift in Sources */,
 				681D0AD32987B6D500E75FA5 /* PhotoCustomAlbumView.swift in Sources */,
 				683371BC298BA1C4006CBD3D /* String+Extension.swift in Sources */,
 				683371B6298B45AF006CBD3D /* BasicView.swift in Sources */,
+				6871FDF2298CF81800769C0B /* CropInformation.swift in Sources */,
+				6871FDF4298D00D200769C0B /* ImageAlbumCollectionCell.swift in Sources */,
 				687F7223298A6E7A00F6FC07 /* ImageListCollectionCell.swift in Sources */,
+				6871FDED298CB08200769C0B /* PhotoEditViewModel.swift in Sources */,
 				683371BE298BA447006CBD3D /* AssetAlbum.swift in Sources */,
 				681D0ADF2987B92600E75FA5 /* PhotoListCollectionCell.swift in Sources */,
 				687F721D298A683500F6FC07 /* PHAssetManager.swift in Sources */,
@@ -480,9 +574,11 @@
 				681D0ADB2987B7A800E75FA5 /* PhotoStyleEditView.swift in Sources */,
 				681D0AA92987B43700E75FA5 /* SceneDelegate.swift in Sources */,
 				68124F852988EAFC00390C6E /* PhotoCropTypeButton.swift in Sources */,
+				6871FDEB298C9DF900769C0B /* PhotoSelectedViewModel.swift in Sources */,
 				68124F832988E71C00390C6E /* PhotoSelectView.swift in Sources */,
 				683371B8298B7C24006CBD3D /* UIImageView+Extension.swift in Sources */,
 				687F7217298A462B00F6FC07 /* PhotoListViewController.swift in Sources */,
+				6871FDF0298CEB8900769C0B /* UIScrollView+Extension.swift in Sources */,
 				681D0AD92987B74900E75FA5 /* UITableView+Extension.swift in Sources */,
 				687F721B298A642300F6FC07 /* PHPhotoLibrary+Extension.swift in Sources */,
 				681D0AE32987C03300E75FA5 /* CutResultViewController.swift in Sources */,

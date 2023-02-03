@@ -23,5 +23,4 @@ extension UIView {
         }
         return CGSize(width: width, height: height)
     }
-    
 }
